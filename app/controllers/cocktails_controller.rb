@@ -5,7 +5,9 @@ before_action :set_cocktail, only: [:show]
     @cocktails = Cocktail.all
   end
   def show
-    @dose = Dose.new
+    # @new_dose = @cocktail.doses.build
+    @new_dose = Dose.new
+    @new_dose.cocktail = @cocktail
     @ingredients = Ingredient.all
   end
   def new

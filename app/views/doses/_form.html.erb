@@ -1,15 +1,15 @@
-<%= simple_form_for [cocktail, dose] do |f| %>
-  <% if dose.errors.any? %>
+<%= simple_form_for [@cocktail, @new_dose] do |f| %>
+  <% if @new_dose.errors.any? %>
     <div id="error_explanation">
       <ul>
-      <% dose.errors.full_messages.each do |message| %>
+      <% @new_dose.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
   <%= f.error_notification %>
-  <%= f.input :ingredient_id, collection: ingredients, selected: ingredients.first %>
+  <%= f.input :ingredient_id, collection: @ingredients, selected: @ingredients.first %>
   <%= f.input :description %>
   <%= f.submit "add a dose", class: "btn btn-primary" %>
 <% end %>
