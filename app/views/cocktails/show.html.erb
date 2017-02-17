@@ -11,7 +11,7 @@
 
 <% @cocktail.doses.each do |dose| %>
   <% if dose.persisted? %>
-    <li><%= dose.ingredient.name %>: <%= dose.description %></li>
+    <li><%= dose.ingredient.name %>: <%= dose.description %> <%= link_to "delete", dose_path(dose), method: :delete %></li>
   <% end %>
 <% end %>
 
@@ -22,3 +22,4 @@
 
 <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %>
 
+<%= link_to "All cocktails", cocktails_path %>
