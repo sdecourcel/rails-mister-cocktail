@@ -12,12 +12,10 @@ class DosesController < ApplicationController
     #@dose = Dose.new(dose_params)
     #@dose.cocktail = @cocktail
     #@dose = @cocktail.doses.build(dose_params)
-    @new_dose = Dose.new(dose_params)
-    @new_dose.cocktail = @cocktail
+    @dose = @cocktail.doses.new(dose_params)
     # @ingredient = Ingredient.find(params[:ingredient])
     # @dose.ingredient = @ingredient
-    @ingredients = Ingredient.all
-    if @new_dose.save
+    if @dose.save
       redirect_to cocktail_path(@cocktail)
     else
       render 'cocktails/show' #:new #, {dose: @dose, cocktail: @cocktail}

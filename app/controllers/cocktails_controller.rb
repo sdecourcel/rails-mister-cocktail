@@ -4,12 +4,12 @@ before_action :set_cocktail, only: [:show]
   def index
     @cocktails = Cocktail.all
   end
+
   def show
     # @new_dose = @cocktail.doses.build
-    @new_dose = Dose.new
-    @new_dose.cocktail = @cocktail
-    @ingredients = Ingredient.all
+    @dose = Dose.new
   end
+
   def new
     @cocktail = Cocktail.new
   end
