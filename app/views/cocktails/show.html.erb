@@ -1,4 +1,9 @@
 <h1><%= @cocktail.name %></h1>
+<div>
+  <% if @cocktail.photo? %>
+    <%= cl_image_tag @cocktail.photo.path, width: 400, height: 400, crop: :fit %>
+  <% end %>
+</div>
 
 <% @cocktail.doses.each do |dose| %>
   <% if dose.persisted? %>

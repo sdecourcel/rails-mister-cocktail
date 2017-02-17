@@ -2,7 +2,17 @@
 
 <% @cocktails.each do |cocktail| %>
   <%= render "cocktails/cocktail", cocktail: cocktail %>
+  <div>
+    <% if cocktail.photo? %>
+      <%= cl_image_tag cocktail.photo.path, width: 200, height: 200, crop: :fit %>
+    <% end %>
+  </div>
 <% end %>
 
 <%= link_to "Add a cocktail", new_cocktail_path %>
+
+<div>
+  <%= cl_image_tag("radwpfndozdygd1uuzij",
+      width: 400, height: 300, crop: :fill) %>
+</div>
 
