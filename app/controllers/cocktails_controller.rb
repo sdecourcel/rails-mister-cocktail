@@ -25,7 +25,7 @@ before_action :set_cocktail, only: [:show]
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :photo)
+    params.require(:cocktail).permit(:name, photos: [])
   end
 
   def set_cocktail
